@@ -1,13 +1,13 @@
 using UnityEngine;
 using Obvious.Soap;
 
-namespace KenRampage.Addons.SOAP.Bindings
+namespace KenRampage.Addons.SOAP.Bindings.Old
 {
     /// <summary>
     /// Sets an object's position based on a Vector3Variable value. Supports world space, local space, 
     /// and anchored positions for UI elements. Includes axis constraints and various update triggers.
     /// </summary>
-    [AddComponentMenu("Ken Rampage/Addons/SOAP/Bindings/Vector3 Variable To Position")]
+    //[AddComponentMenu("Ken Rampage/Addons/SOAP/Bindings/Vector3 Variable To Position")]
     public class Vector3VariableToPosition : MonoBehaviour
     {
         public enum PositionMode

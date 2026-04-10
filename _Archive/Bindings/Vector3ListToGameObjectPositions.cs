@@ -2,13 +2,13 @@ using UnityEngine;
 using Obvious.Soap;
 using System.Collections.Generic;
 
-namespace KenRampage.Addons.SOAP.Bindings
+namespace KenRampage.Addons.SOAP.Bindings.Old
 {
     /// <summary>
     /// Manages a collection of GameObjects whose positions are driven by a ScriptableListVector3.
     /// Handles object instantiation, removal, and position updates based on the Vector3 list's contents.
     /// </summary>
-    [AddComponentMenu("Ken Rampage/Addons/SOAP/Bindings/Vector3 List To GameObject Positions")]
+    //[AddComponentMenu("Ken Rampage/Addons/SOAP/Bindings/Vector3 List To GameObject Positions")]
     public class Vector3ListToGameObjectPositions : MonoBehaviour
     {
         [SerializeField] private ScriptableListVector3 _vector3List;

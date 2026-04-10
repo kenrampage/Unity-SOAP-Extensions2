@@ -2,13 +2,13 @@ using UnityEngine;
 using Obvious.Soap;
 using KenRampage.Utilities.Camera;
 
-namespace KenRampage.Addons.SOAP.Bindings
+namespace KenRampage.Addons.SOAP.Bindings.Old
 {
     /// <summary>
     /// Tracks an object's position (world, local, or screen space) and updates a Vector3Variable with the result.
     /// Supports camera-based coordinate transformations and canvas space handling.
     /// </summary>
-    [AddComponentMenu("Ken Rampage/Addons/SOAP/Bindings/Position To Vector3 Variable")]
+    //[AddComponentMenu("Ken Rampage/Addons/SOAP/Bindings/Position To Vector3 Variable")]
     [RequireComponent(typeof(CameraProvider))]
     public class PositionToVector3Variable : MonoBehaviour
     {

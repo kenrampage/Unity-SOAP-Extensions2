@@ -1,13 +1,13 @@
 using UnityEngine;
 using Obvious.Soap;
 
-namespace KenRampage.Addons.SOAP.Bindings
+namespace KenRampage.Addons.SOAP.Bindings.Old
 {
     /// <summary>
     /// Captures an object's rotation (local or world space) and stores it in a Vector3Variable.
     /// Updates can occur on Awake and/or every frame based on configuration.
     /// </summary>
-    [AddComponentMenu("Ken Rampage/Addons/SOAP/Bindings/Rotation To Vector3 Variable")]
+    //[AddComponentMenu("Ken Rampage/Addons/SOAP/Bindings/Rotation To Vector3 Variable")]
     public class RotationToVector3Variable : MonoBehaviour
     {
         [SerializeField] private Vector3Variable _variable;

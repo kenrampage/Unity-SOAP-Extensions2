@@ -1,13 +1,13 @@
 using Obvious.Soap;
 using UnityEngine;
 
-namespace KenRampage.Addons.SOAP.Bindings
+namespace KenRampage.Addons.SOAP.Bindings.Old
 {
     /// <summary>
     /// Provides helper functions for managing a ScriptableListVector3, including adding items, 
     /// removing the last item, and clearing the list. Accessible through the component's context menu.
     /// </summary>
-    [AddComponentMenu("Ken Rampage/Addons/SOAP/Bindings/Vector3 List Helper")]
+    //[AddComponentMenu("Ken Rampage/Addons/SOAP/Bindings/Vector3 List Helper")]
     public class Vector3ListHelper : MonoBehaviour
     {
         [SerializeField] private ScriptableListVector3 _vector3List;

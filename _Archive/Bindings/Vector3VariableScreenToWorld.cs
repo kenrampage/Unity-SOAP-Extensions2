@@ -1,13 +1,13 @@
 using UnityEngine;
 using Obvious.Soap;
 
-namespace KenRampage.Addons.SOAP.Bindings
+namespace KenRampage.Addons.SOAP.Bindings.Old
 {
     /// <summary>
     /// Handles bidirectional conversion between screen space and world space coordinates using Vector3Variables.
     /// Supports automatic conversion on value changes and manual conversion through direct calls.
     /// </summary>
-    [AddComponentMenu("Ken Rampage/Addons/SOAP/Bindings/Vector3 Variable Screen To World")]
+    //[AddComponentMenu("Ken Rampage/Addons/SOAP/Bindings/Vector3 Variable Screen To World")]
     public class Vector3VariableScreenToWorld : MonoBehaviour
     {
         public enum ConversionDirection

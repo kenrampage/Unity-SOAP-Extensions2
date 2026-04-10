@@ -1,12 +1,12 @@
 using UnityEngine;
 using Obvious.Soap;
 
-namespace KenRampage.Addons.SOAP.Bindings
+namespace KenRampage.Addons.SOAP.Bindings.Old
 {
     /// <summary>
     /// Makes an object look at a target position defined by a Vector3Variable, with optional axis constraints.
     /// </summary>
-    [AddComponentMenu("Ken Rampage/Addons/SOAP/Bindings/Look At Vector3 Variable")]
+    //[AddComponentMenu("Ken Rampage/Addons/SOAP/Bindings/Look At Vector3 Variable")]
     public class LookAtVector3Variable : MonoBehaviour
     {
         [SerializeField]

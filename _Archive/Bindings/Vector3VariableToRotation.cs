@@ -1,13 +1,13 @@
 using UnityEngine;
 using Obvious.Soap;
 
-namespace KenRampage.Addons.SOAP.Bindings
+namespace KenRampage.Addons.SOAP.Bindings.Old
 {
     /// <summary>
     /// Sets an object's rotation based on a Vector3Variable value. Supports both world and local space rotations,
     /// with optional axis constraints and frame-based updates.
     /// </summary>
-    [AddComponentMenu("Ken Rampage/Addons/SOAP/Bindings/Vector3 Variable To Rotation")]
+    //[AddComponentMenu("Ken Rampage/Addons/SOAP/Bindings/Vector3 Variable To Rotation")]
     public class Vector3VariableToRotation : MonoBehaviour
     {
         [SerializeField] private Vector3Variable _variable;

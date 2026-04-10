@@ -1,13 +1,13 @@
 using UnityEngine;
 using Obvious.Soap;
 
-namespace KenRampage.Addons.SOAP.Bindings
+namespace KenRampage.Addons.SOAP.Bindings.Old
 {
     /// <summary>
     /// Converts mouse screen position to world space coordinates and stores the result in a Vector3Variable.
     /// Handles camera-based coordinate transformation and Z-depth adjustments.
     /// </summary>
-    [AddComponentMenu("Ken Rampage/Addons/SOAP/Bindings/Mouse Position To Vector3 Variable")]
+    //[AddComponentMenu("Ken Rampage/Addons/SOAP/Bindings/Mouse Position To Vector3 Variable")]
     public class MousePositionToVector3Variable : MonoBehaviour
     {
         [SerializeField] private Vector3Variable _currentMousePosition;
