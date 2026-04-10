@@ -1,0 +1,11 @@
+{
+  "name": "com.kenrampage.soap-extensions",
+  "version": "1.0.0",
+  "displayName": "Unity SOAP Extensions",
+  "description": "Extended listener components for Obvious SOAP, including variable listeners, variable value listeners, and event value listeners.",
+  "unity": "6000.0",
+  "author": {
+    "name": "Ken Rampage",
+    "url": "https://github.com/kenrampage"
+  }
+}
