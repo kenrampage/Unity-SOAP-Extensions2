@@ -42,13 +42,8 @@ namespace KenRampage.Addons.SOAP.Listeners
             public override Component Value => _value;
 
             [Tooltip("UnityEvent invoked when the expected value matches.")]
-            [SerializeField] private ComponentUnityEvent _response = null;
+            [SerializeField] private UnityEvent<Component> _response = null;
             public override UnityEvent<Component> Response => _response;
-        }
-
-        [System.Serializable]
-        public class ComponentUnityEvent : UnityEvent<Component>
-        {
         }
         #endregion
     }

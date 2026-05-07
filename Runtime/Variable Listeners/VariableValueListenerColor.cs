@@ -33,12 +33,9 @@ namespace KenRampage.Addons.SOAP.Listeners
             public override Color Value => _value;
 
             [Tooltip("UnityEvent invoked when the expected value matches.")]
-            [SerializeField] private ColorUnityEvent _response;
+            [SerializeField] private UnityEvent<Color> _response;
             public override UnityEvent<Color> Response => _response;
         }
-
-        [System.Serializable]
-        public class ColorUnityEvent : UnityEvent<Color> { }
         #endregion
     }
 }

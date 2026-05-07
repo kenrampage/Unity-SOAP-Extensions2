@@ -33,12 +33,9 @@ namespace KenRampage.Addons.SOAP.Listeners
             public override float Value => _value;
 
             [Tooltip("UnityEvent invoked when the expected value matches.")]
-            [SerializeField] private FloatUnityEvent _response;
+            [SerializeField] private UnityEvent<float> _response;
             public override UnityEvent<float> Response => _response;
         }
-
-        [System.Serializable]
-        public class FloatUnityEvent : UnityEvent<float> { }
         #endregion
     }
 }

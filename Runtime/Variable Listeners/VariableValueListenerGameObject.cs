@@ -33,12 +33,9 @@ namespace KenRampage.Addons.SOAP.Listeners
             public override GameObject Value => _value;
 
             [Tooltip("UnityEvent invoked when the expected value matches.")]
-            [SerializeField] private GameObjectUnityEvent _response;
+            [SerializeField] private UnityEvent<GameObject> _response;
             public override UnityEvent<GameObject> Response => _response;
         }
-
-        [System.Serializable]
-        public class GameObjectUnityEvent : UnityEvent<GameObject> { }
         #endregion
     }
 }

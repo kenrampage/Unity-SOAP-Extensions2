@@ -33,12 +33,9 @@ namespace KenRampage.Addons.SOAP.Listeners
             public override Vector2Int Value => _value;
 
             [Tooltip("UnityEvent invoked when the expected value matches.")]
-            [SerializeField] private Vector2IntUnityEvent _response;
+            [SerializeField] private UnityEvent<Vector2Int> _response;
             public override UnityEvent<Vector2Int> Response => _response;
         }
-
-        [System.Serializable]
-        public class Vector2IntUnityEvent : UnityEvent<Vector2Int> { }
         #endregion
     }
 }

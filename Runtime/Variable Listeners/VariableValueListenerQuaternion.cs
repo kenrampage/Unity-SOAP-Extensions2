@@ -33,12 +33,9 @@ namespace KenRampage.Addons.SOAP.Listeners
             public override Quaternion Value => _value;
 
             [Tooltip("UnityEvent invoked when the expected value matches.")]
-            [SerializeField] private QuaternionUnityEvent _response;
+            [SerializeField] private UnityEvent<Quaternion> _response;
             public override UnityEvent<Quaternion> Response => _response;
         }
-
-        [System.Serializable]
-        public class QuaternionUnityEvent : UnityEvent<Quaternion> { }
         #endregion
     }
 }
