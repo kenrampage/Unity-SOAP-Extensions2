@@ -29,12 +29,9 @@ namespace KenRampage.Addons.SOAP.Listeners
             public override ScriptableVariable<Color> Variable => _variable;
 
             [Tooltip("UnityEvent invoked when this variable changes.")]
-            [SerializeField] private ColorUnityEvent _response;
+            [SerializeField] private UnityEvent<Color> _response;
             public override UnityEvent<Color> Response => _response;
         }
-
-        [System.Serializable]
-        public class ColorUnityEvent : UnityEvent<Color> { }
         #endregion
     }
 }

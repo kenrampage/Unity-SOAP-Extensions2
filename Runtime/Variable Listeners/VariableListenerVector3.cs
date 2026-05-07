@@ -29,12 +29,9 @@ namespace KenRampage.Addons.SOAP.Listeners
             public override ScriptableVariable<Vector3> Variable => _variable;
 
             [Tooltip("UnityEvent invoked when this variable changes.")]
-            [SerializeField] private Vector3UnityEvent _response;
+            [SerializeField] private UnityEvent<Vector3> _response;
             public override UnityEvent<Vector3> Response => _response;
         }
-
-        [System.Serializable]
-        public class Vector3UnityEvent : UnityEvent<Vector3> { }
         #endregion
     }
 }

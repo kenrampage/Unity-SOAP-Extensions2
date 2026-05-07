@@ -41,19 +41,13 @@ namespace KenRampage.Addons.SOAP.Listeners
             public override ScriptableVariable<float> Variable => _variable;
 
             [Tooltip("UnityEvent invoked when this variable changes.")]
-            [SerializeField] private FloatUnityEvent _response;
+            [SerializeField] private UnityEvent<float> _response;
             public override UnityEvent<float> Response => _response;
 
             [Tooltip("Optional integer event using rounded value.")]
-            [SerializeField] private IntUnityEvent _intResponse;
+            [SerializeField] private UnityEvent<int> _intResponse;
             public UnityEvent<int> IntResponse => _intResponse;
         }
-
-        [System.Serializable]
-        public class FloatUnityEvent : UnityEvent<float> { }
-
-        [System.Serializable]
-        public class IntUnityEvent : UnityEvent<int> { }
 
         #endregion
     }

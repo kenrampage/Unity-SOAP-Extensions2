@@ -29,12 +29,9 @@ namespace KenRampage.Addons.SOAP.Listeners
             public override ScriptableVariable<Quaternion> Variable => _variable;
 
             [Tooltip("UnityEvent invoked when this variable changes.")]
-            [SerializeField] private QuaternionUnityEvent _response;
+            [SerializeField] private UnityEvent<Quaternion> _response;
             public override UnityEvent<Quaternion> Response => _response;
         }
-
-        [System.Serializable]
-        public class QuaternionUnityEvent : UnityEvent<Quaternion> { }
         #endregion
     }
 }
