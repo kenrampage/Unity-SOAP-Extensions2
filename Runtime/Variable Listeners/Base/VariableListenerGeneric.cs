@@ -8,13 +8,38 @@ using Obvious.Soap;
 namespace KenRampage.Addons.SOAP.Listeners
 {
     /// <summary>
-    /// Generic variable listener that subscribes to one or more ScriptableVariables
-    /// and invokes the configured response for each variable update.
+    /// Generic base for variable listener components. Subscribes to one or more
+    /// <see cref="ScriptableVariable{TValue}"/> assets and invokes a paired
+    /// <see cref="UnityEvent{TValue}"/> whenever any of them change.
+    /// <para>
+    /// <b>Why abstract:</b> Unity cannot add open-generic types as components, and the
+    /// base <see cref="VariableResponse"/> has no concrete serialized fields. Concrete
+    /// subclasses (e.g. <c>VariableListenerBool</c>) provide the typed variable and event.
+    /// </para>
+    /// <para>
+    /// <b>Subclass pattern:</b><br/>
+    /// 1. Declare a <c>[SerializeField] private VariableResponse[] _variableResponses</c> field
+    ///    typed to the subclass's own <c>VariableResponse</c> so Unity serializes the concrete type.<br/>
+    /// 2. Override <see cref="VariableResponses"/> to return that field — this satisfies the
+    ///    abstract contract so base-class logic can drive subscription and invocation.<br/>
+    /// 3. Nest a <c>new class VariableResponse</c> that overrides <see cref="VariableResponse.Variable"/>
+    ///    and <see cref="VariableResponse.Response"/> with serialized backing fields for the
+    ///    concrete SOAP variable type and a <c>UnityEvent&lt;TValue&gt;</c>.
+    /// </para>
+    /// <para>
+    /// <b>Override <see cref="InvokeResponse"/> to add extra events</b> (e.g. a convenience
+    /// float output on an int listener) without changing the base subscription logic.
+    /// </para>
     /// </summary>
     public abstract class VariableListenerGeneric<TValue> : VariableListenerBase
     {
         #region Inspector
 
+        /// <summary>
+        /// Returns the array of variable-response pairs configured in the Inspector.
+        /// Must be implemented by each concrete subclass, returning its own serialized
+        /// <c>VariableResponse[]</c> field so Unity serializes the correct concrete type.
+        /// </summary>
         protected abstract VariableResponse[] VariableResponses { get; }
 
         #endregion
@@ -60,11 +85,20 @@ namespace KenRampage.Addons.SOAP.Listeners
 
         #region Invocation
 
+        /// <summary>
+        /// Invokes the response for a single variable-response pair.
+        /// Override in subclasses to fire additional events (e.g. a float output
+        /// alongside the primary int event) without duplicating subscription logic.
+        /// </summary>
         protected virtual void InvokeResponse(VariableResponse response, TValue value)
         {
             response.Response?.Invoke(value);
         }
 
+        /// <summary>
+        /// Immediately invokes all configured responses using each variable's current value.
+        /// Called automatically when <c>InvokeOnSubscribe</c> is enabled.
+        /// </summary>
         protected void InvokeCurrentValues()
         {
             foreach (var response in VariableResponses)
@@ -107,16 +141,28 @@ namespace KenRampage.Addons.SOAP.Listeners
 
         #region Nested Types
 
+        /// <summary>
+        /// Base pairing of a variable source and its response event.
+        /// The virtual properties return null by default — concrete subclasses must
+        /// override both with serialized backing fields to provide actual data.
+        /// <para>
+        /// Unity only serializes fields, not properties, so each subclass must declare
+        /// its own <c>[SerializeField]</c> fields and expose them via the overrides.
+        /// The properties exist solely as a polymorphic access path for the base class logic.
+        /// </para>
+        /// </summary>
         [Serializable]
         public class VariableResponse
         {
             /// <summary>
-            /// Variable source for this response entry.
+            /// The SOAP variable asset to observe. Override with a concrete typed variable
+            /// field (e.g. <c>BoolVariable</c>) in each subclass.
             /// </summary>
             public virtual ScriptableVariable<TValue> Variable { get; }
 
             /// <summary>
-            /// Event invoked when the corresponding variable changes.
+            /// Event invoked when the variable's value changes.
+            /// Override with a <c>[SerializeField] UnityEvent&lt;TValue&gt;</c> field in each subclass.
             /// </summary>
             public virtual UnityEvent<TValue> Response { get; }
         }
