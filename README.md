@@ -1,8 +1,8 @@
 # Unity SOAP Extensions
 
-Unity SOAP Extensions is an add-on package for the Obvious SOAP asset.
+Unity SOAP Extensions is an add-on package for the Obvious SOAP package [available from the Unity Asset Store](https://assetstore.unity.com/packages/tools/utilities/soap-scriptableobject-architecture-pattern-232107?srsltid=AfmBOoq50efPZ-9k1mTLjuLdR9qWUaXgY4C4KpRLr5_UqcQZREA6R1go)
 
-This package adds listener components that expand SOAP workflows with additional value-driven behavior and inspector-friendly setup.
+This package adds listener components that expand SOAP (ScriptableObject Architecture Pattern) workflows with additional value-driven behavior and inspector-friendly setup.
 
 ## Features
 
