@@ -15,4 +15,4 @@ MonoBehaviour:
   TagIndex: 0
   Description: 
   _debugLogEnabled: 0
-  _debugValue: 0
+  _debugValue: 1

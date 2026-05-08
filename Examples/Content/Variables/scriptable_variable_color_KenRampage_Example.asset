@@ -16,7 +16,7 @@ MonoBehaviour:
   Description: 
   _guid: 6dedd37fe80764c2fa104a5f81f9ec48
   _saveGuid: 0
-  _value: {r: 0, g: 0, b: 0, a: 0}
+  _value: {r: 0, g: 0, b: 0, a: 1}
   _debugLogEnabled: 0
   _saved: 0
   _defaultValue: {r: 0, g: 0, b: 0, a: 0}
