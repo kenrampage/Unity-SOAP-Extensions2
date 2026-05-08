@@ -2,17 +2,23 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 32
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3f39f579066605409b539400e8d7b94, type: 3}
-  m_Name: scriptable_event_string_KenRampage_Example
+  m_Script: {fileID: 11500000, guid: 6a11231538da9894d8dce88b47df6a36, type: 3}
+  m_Name: scriptable_variable_bool_KenRampage
   m_EditorClassIdentifier: 
   TagIndex: 0
   Description: 
+  _guid: b4facdd46eb3a48f99292e07123e6788
+  _saveGuid: 0
+  _value: 0
   _debugLogEnabled: 0
-  _debugValue: 
+  _saved: 0
+  _defaultValue: 0
+  _resetOn: 0
+  _runtimeValue: 0

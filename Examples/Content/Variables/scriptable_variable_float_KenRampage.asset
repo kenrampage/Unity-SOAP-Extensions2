@@ -9,16 +9,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d5e637945a57d243bfbf35cab0eba1e, type: 3}
-  m_Name: scriptable_variable_Quaternion_KenRampage_Example
+  m_Script: {fileID: 11500000, guid: a9978ce9c8bdc724896114c9952c52ea, type: 3}
+  m_Name: scriptable_variable_float_KenRampage
   m_EditorClassIdentifier: 
   TagIndex: 0
   Description: 
-  _guid: b28876f3aef904c64a33c92d3e4f3399
+  _guid: c8b8254247f624c1c94e7b8ed386a796
   _saveGuid: 0
-  _value: {x: 0, y: 0, z: 0, w: 0}
+  _value: 0
   _debugLogEnabled: 0
   _saved: 0
-  _defaultValue: {x: 0, y: 0, z: 0, w: 0}
+  _defaultValue: 0
   _resetOn: 0
-  _runtimeValue: {x: 0, y: 0, z: 0, w: 0}
+  _runtimeValue: 0
+  _isClamped: 0
+  _min:
+    UseLocal: 1
+    LocalValue: 0
+    Variable: {fileID: 0}
+  _max:
+    UseLocal: 1
+    LocalValue: 3.4028235e+38
+    Variable: {fileID: 0}

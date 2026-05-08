@@ -9,16 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7046b79ca6dcd147b7412e32a7dbb69, type: 3}
-  m_Name: scriptable_variable_color_KenRampage_Example
+  m_Script: {fileID: 11500000, guid: 1300736a6c75069498acdad864241816, type: 3}
+  m_Name: scriptable_variable_vector3_KenRampage
   m_EditorClassIdentifier: 
   TagIndex: 0
   Description: 
-  _guid: 6dedd37fe80764c2fa104a5f81f9ec48
+  _guid: faf62bb71956e423aa485ca5df8720b4
   _saveGuid: 0
-  _value: {r: 0, g: 0, b: 0, a: 1}
+  _value: {x: 0, y: 0, z: 0}
   _debugLogEnabled: 0
   _saved: 0
-  _defaultValue: {r: 0, g: 0, b: 0, a: 0}
+  _defaultValue: {x: 0, y: 0, z: 0}
   _resetOn: 0
-  _runtimeValue: {r: 0, g: 0, b: 0, a: 1}
+  _runtimeValue: {x: 0, y: 0, z: 0}

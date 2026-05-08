@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a49b7e678b3ebb7418adb84806d24646, type: 3}
-  m_Name: scriptable_event_noParam_KenRampage_Example
+  m_Script: {fileID: 11500000, guid: 3b4ca911a693eb84c8065b54815ee711, type: 3}
+  m_Name: scriptable_event_gameObject_KenRampage
   m_EditorClassIdentifier: 
   TagIndex: 0
   Description: 
   _debugLogEnabled: 0
+  _debugValue: {fileID: 0}
