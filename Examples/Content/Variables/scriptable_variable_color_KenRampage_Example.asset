@@ -21,4 +21,4 @@ MonoBehaviour:
   _saved: 0
   _defaultValue: {r: 0, g: 0, b: 0, a: 0}
   _resetOn: 0
-  _runtimeValue: {r: 0, g: 0, b: 0, a: 0}
+  _runtimeValue: {r: 0, g: 0, b: 0, a: 1}
