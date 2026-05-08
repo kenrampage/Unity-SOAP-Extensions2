@@ -44,6 +44,15 @@ namespace KenRampage.Addons.SOAP.Listeners
             [Tooltip("UnityEvent invoked when the expected value matches.")]
             [SerializeField] private UnityEvent<bool> _response = null;
             public override UnityEvent<bool> Response => _response;
+
+            [Tooltip("Optional string event using bool value.")]
+            [SerializeField] public UnityEvent<string> _stringResponse = null;
+
+            public override void Invoke(bool value)
+            {
+                base.Invoke(value);
+                _stringResponse?.Invoke(value.ToString());
+            }
         }
         #endregion
     }

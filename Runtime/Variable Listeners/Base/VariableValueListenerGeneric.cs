@@ -102,7 +102,7 @@ namespace KenRampage.Addons.SOAP.Listeners
                     continue;
 
                 if (IsMatch(response.Value, value))
-                    response.Response?.Invoke(value);
+                    response.Invoke(value);
             }
         }
 
@@ -180,6 +180,16 @@ namespace KenRampage.Addons.SOAP.Listeners
             /// Override with a <c>[SerializeField] UnityEvent&lt;TValue&gt;</c> field in each subclass.
             /// </summary>
             public virtual UnityEvent<TValue> Response { get; }
+
+            /// <summary>
+            /// Fires all events for this response entry. The base implementation invokes
+            /// <see cref="Response"/>. Override in concrete subclasses to also fire
+            /// additional convenience events without duplicating the match loop.
+            /// </summary>
+            public virtual void Invoke(TValue value)
+            {
+                Response?.Invoke(value);
+            }
         }
 
         #endregion

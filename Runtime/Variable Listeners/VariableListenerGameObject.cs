@@ -31,6 +31,15 @@ namespace KenRampage.Addons.SOAP.Listeners
             [Tooltip("UnityEvent invoked when this variable changes.")]
             [SerializeField] private UnityEvent<GameObject> _response;
             public override UnityEvent<GameObject> Response => _response;
+
+            [Tooltip("Optional string event using GameObject.ToString().")]
+            [SerializeField] public UnityEvent<string> _stringResponse;
+
+            public override void Invoke(GameObject value)
+            {
+                base.Invoke(value);
+                _stringResponse?.Invoke(value != null ? value.ToString() : string.Empty);
+            }
         }
         #endregion
     }

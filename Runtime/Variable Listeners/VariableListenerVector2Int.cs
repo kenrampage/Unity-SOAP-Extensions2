@@ -31,6 +31,19 @@ namespace KenRampage.Addons.SOAP.Listeners
             [Tooltip("UnityEvent invoked when this variable changes.")]
             [SerializeField] private UnityEvent<Vector2Int> _response;
             public override UnityEvent<Vector2Int> Response => _response;
+
+            [Tooltip("Optional Vector2 event converted from Vector2Int value.")]
+            [SerializeField] public UnityEvent<Vector2> _vector2Response;
+
+            [Tooltip("Optional string event using Vector2Int value.")]
+            [SerializeField] public UnityEvent<string> _stringResponse;
+
+            public override void Invoke(Vector2Int value)
+            {
+                base.Invoke(value);
+                _vector2Response?.Invoke(new Vector2(value.x, value.y));
+                _stringResponse?.Invoke(value.ToString());
+            }
         }
         #endregion
     }

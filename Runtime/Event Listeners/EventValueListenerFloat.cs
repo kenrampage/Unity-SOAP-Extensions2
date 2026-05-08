@@ -44,6 +44,19 @@ namespace KenRampage.Addons.SOAP.Listeners
             [Tooltip("UnityEvent invoked when the expected value matches.")]
             [SerializeField] private UnityEvent<float> _response = null;
             public override UnityEvent<float> Response => _response;
+
+            [Tooltip("Optional integer event using rounded value.")]
+            [SerializeField] public UnityEvent<int> _intResponse = null;
+
+            [Tooltip("Optional string event using float value.")]
+            [SerializeField] public UnityEvent<string> _stringResponse = null;
+
+            public override void Invoke(float value)
+            {
+                base.Invoke(value);
+                _intResponse?.Invoke(Mathf.RoundToInt(value));
+                _stringResponse?.Invoke(value.ToString());
+            }
         }
         #endregion
     }

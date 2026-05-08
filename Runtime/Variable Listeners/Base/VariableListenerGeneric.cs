@@ -92,7 +92,7 @@ namespace KenRampage.Addons.SOAP.Listeners
         /// </summary>
         protected virtual void InvokeResponse(VariableResponse response, TValue value)
         {
-            response.Response?.Invoke(value);
+            response.Invoke(value);
         }
 
         /// <summary>
@@ -165,6 +165,16 @@ namespace KenRampage.Addons.SOAP.Listeners
             /// Override with a <c>[SerializeField] UnityEvent&lt;TValue&gt;</c> field in each subclass.
             /// </summary>
             public virtual UnityEvent<TValue> Response { get; }
+
+            /// <summary>
+            /// Fires all events for this response entry. The base implementation invokes
+            /// <see cref="Response"/>. Override in concrete subclasses to also fire
+            /// additional convenience events without duplicating subscription logic.
+            /// </summary>
+            public virtual void Invoke(TValue value)
+            {
+                Response?.Invoke(value);
+            }
         }
 
         #endregion

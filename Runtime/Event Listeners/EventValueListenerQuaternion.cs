@@ -44,6 +44,19 @@ namespace KenRampage.Addons.SOAP.Listeners
             [Tooltip("UnityEvent invoked when the expected value matches.")]
             [SerializeField] private UnityEvent<Quaternion> _response = null;
             public override UnityEvent<Quaternion> Response => _response;
+
+            [Tooltip("Optional Vector3 event using Euler angles.")]
+            [SerializeField] public UnityEvent<Vector3> _vector3Response = null;
+
+            [Tooltip("Optional string event using Quaternion value.")]
+            [SerializeField] public UnityEvent<string> _stringResponse = null;
+
+            public override void Invoke(Quaternion value)
+            {
+                base.Invoke(value);
+                _vector3Response?.Invoke(value.eulerAngles);
+                _stringResponse?.Invoke(value.ToString());
+            }
         }
         #endregion
     }

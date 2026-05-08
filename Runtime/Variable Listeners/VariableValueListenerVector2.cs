@@ -35,6 +35,19 @@ namespace KenRampage.Addons.SOAP.Listeners
             [Tooltip("UnityEvent invoked when the expected value matches.")]
             [SerializeField] private UnityEvent<Vector2> _response;
             public override UnityEvent<Vector2> Response => _response;
+
+            [Tooltip("Optional Vector2Int event using rounded components.")]
+            [SerializeField] public UnityEvent<Vector2Int> _vector2IntResponse;
+
+            [Tooltip("Optional string event using Vector2 value.")]
+            [SerializeField] public UnityEvent<string> _stringResponse;
+
+            public override void Invoke(Vector2 value)
+            {
+                base.Invoke(value);
+                _vector2IntResponse?.Invoke(new Vector2Int(Mathf.RoundToInt(value.x), Mathf.RoundToInt(value.y)));
+                _stringResponse?.Invoke(value.ToString());
+            }
         }
         #endregion
     }

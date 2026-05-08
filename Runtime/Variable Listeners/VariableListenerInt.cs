@@ -19,18 +19,6 @@ namespace KenRampage.Addons.SOAP.Listeners
 
         #endregion
 
-        #region Invocation
-
-
-        protected override void InvokeResponse(VariableListenerGeneric<int>.VariableResponse response, int value)
-        {
-            response.Response?.Invoke(value);
-            if (response is VariableResponse intResponse)
-                intResponse.FloatResponse?.Invoke(value);
-        }
-
-        #endregion
-
         #region Nested Types
 
         [System.Serializable]
@@ -45,8 +33,17 @@ namespace KenRampage.Addons.SOAP.Listeners
             public override UnityEvent<int> Response => _response;
 
             [Tooltip("Optional float event converted from int value.")]
-            [SerializeField] private UnityEvent<float> _floatResponse;
-            public UnityEvent<float> FloatResponse => _floatResponse;
+            [SerializeField] public UnityEvent<float> _floatResponse;
+
+            [Tooltip("Optional string event using int value.")]
+            [SerializeField] public UnityEvent<string> _stringResponse;
+
+            public override void Invoke(int value)
+            {
+                base.Invoke(value);
+                _floatResponse?.Invoke(value);
+                _stringResponse?.Invoke(value.ToString());
+            }
         }
 
         #endregion

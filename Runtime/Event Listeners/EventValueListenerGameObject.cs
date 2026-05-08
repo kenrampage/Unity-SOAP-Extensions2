@@ -44,6 +44,15 @@ namespace KenRampage.Addons.SOAP.Listeners
             [Tooltip("UnityEvent invoked when the expected value matches.")]
             [SerializeField] private UnityEvent<GameObject> _response = null;
             public override UnityEvent<GameObject> Response => _response;
+
+            [Tooltip("Optional string event using GameObject.ToString().")]
+            [SerializeField] public UnityEvent<string> _stringResponse = null;
+
+            public override void Invoke(GameObject value)
+            {
+                base.Invoke(value);
+                _stringResponse?.Invoke(value != null ? value.ToString() : string.Empty);
+            }
         }
         #endregion
     }
