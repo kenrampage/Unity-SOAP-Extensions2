@@ -34,6 +34,7 @@ public class SinglePrefabSpawner : MonoBehaviour
         if (prefab == null)
         {
             Debug.LogWarning("Prefab is null.", this);
+            DestroyCurrentPrefab();
             return;
         }
 
