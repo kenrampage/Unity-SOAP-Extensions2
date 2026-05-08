@@ -9,6 +9,8 @@ namespace KenRampage.Addons.SOAP.Demo
 public class SinglePrefabSpawner : MonoBehaviour
 {
     [SerializeField] private Transform spawnLocation;
+    [Tooltip("If true, the spawned instance will be parented to the spawn location (required for UI prefabs).")]
+    [SerializeField] private bool _reparentToSpawnLocation = false;
 
     private GameObject currentInstance;
 
@@ -27,20 +29,30 @@ public class SinglePrefabSpawner : MonoBehaviour
     {
         if (spawnLocation == null)
         {
-            Debug.LogWarning("Spawn location is not assigned.", this);
+            //Debug.LogWarning("Spawn location is not assigned.", this);
             return;
         }
 
         if (prefab == null)
         {
-            Debug.LogWarning("Prefab is null.", this);
+            //Debug.LogWarning("Prefab is null.", this);
             DestroyCurrentPrefab();
             return;
         }
 
         DestroyCurrentPrefab();
 
-        currentInstance = Instantiate(prefab, spawnLocation.position, spawnLocation.rotation);
+        //Debug.Log($"Spawning prefab: {prefab.name}", this);
+        if (_reparentToSpawnLocation)
+        {
+            currentInstance = Instantiate(prefab, spawnLocation);
+            currentInstance.transform.localPosition = Vector3.zero;
+            currentInstance.transform.localRotation = Quaternion.identity;
+        }
+        else
+        {
+            currentInstance = Instantiate(prefab, spawnLocation.position, spawnLocation.rotation);
+        }
     }
 }
 }
