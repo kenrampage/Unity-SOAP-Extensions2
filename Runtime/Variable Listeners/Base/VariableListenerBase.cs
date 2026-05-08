@@ -45,7 +45,7 @@ namespace KenRampage.Addons.SOAP.Listeners
         [Tooltip("Controls when this listener subscribes and unsubscribes.")]
         [SerializeField] protected Binding _binding = Binding.UNTIL_DESTROY;
         [Tooltip("If enabled, invokes listener responses once immediately after subscribing.")]
-        [SerializeField] protected bool _invokeOnSubscribe = false;
+        [SerializeField] protected bool _invokeOnSubscribe = true;
         [Tooltip("If enabled, disables this GameObject right after subscription is set up.")]
         [SerializeField] protected bool _disableAfterSubscribing = false;
 
