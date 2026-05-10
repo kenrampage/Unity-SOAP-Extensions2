@@ -1,8 +1,8 @@
 # Unity SOAP Extensions
 
-Unity SOAP Extensions is an add-on package for the Obvious SOAP package [available from the Unity Asset Store](https://assetstore.unity.com/packages/tools/utilities/soap-scriptableobject-architecture-pattern-232107?srsltid=AfmBOoq50efPZ-9k1mTLjuLdR9qWUaXgY4C4KpRLr5_UqcQZREA6R1go)
+Unity SOAP Extensions is an addon package for the Obvious SOAP package [available from the Unity Asset Store](https://assetstore.unity.com/packages/tools/utilities/soap-scriptableobject-architecture-pattern-232107?srsltid=AfmBOoq50efPZ-9k1mTLjuLdR9qWUaXgY4C4KpRLr5_UqcQZREA6R1go)
 
-This package adds listener components that expand SOAP (ScriptableObject Architecture Pattern) workflows with additional value-driven behavior and inspector-friendly setup.
+This package adds listener components that expand SOAP (ScriptableObject Architecture Pattern) workflows with additional value driven behavior and inspector friendly components.
 
 ## Features
 
@@ -12,7 +12,6 @@ This package adds listener components that expand SOAP (ScriptableObject Archite
 
 - Variable Listeners
   - Listen to SOAP ScriptableVariables and invoke UnityEvents on value changes.
-  - Includes binding controls (`UNTIL_DESTROY` and `UNTIL_DISABLE`) and optional invoke-on-subscribe behavior.
 
 - Variable Value Listeners
   - Listen to a single ScriptableVariable and invoke events only when the incoming value matches configured entries.
@@ -37,22 +36,3 @@ The listener sets cover the following SOAP types:
 - `Quaternion`
 - `Component`
 - `GameObject`
-
-## Runtime Folder Layout
-
-- `Runtime/Bindings`
-  - Transform and GameObject bindings
-
-- `Runtime/Variable Listeners`
-  - Variable listeners
-  - Variable value listeners
-  - Shared variable listener base classes
-
-- `Runtime/Event Listeners`
-  - Event value listeners
-  - Shared event value listener base class
-
-## Notes
-
-- These extensions are designed to follow SOAP patterns while adding value-filtered listener workflows.
-- Inspector fields include summaries and tooltips to make setup and maintenance easier.
